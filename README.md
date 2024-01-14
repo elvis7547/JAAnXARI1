@@ -3,18 +3,18 @@
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
 
 <h2 align="center">
-    ──「 ᴀᴀʀᴜ ✘ ᴍᴜsɪᴄ ᴠ2 」──
+    ──「 ᴀʀI ✘ ᴍᴜsɪᴄ 」──
 </h2>
 
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
 
-<p align="center"><a href="https://t.me/HONEY_SINGH_121"><img src="https://te.legra.ph/file/8d4d7d5dc2e7cf675d80c.jpg"></a></p>
+<p align="center"><a href="https://t.me/lll_notookk_lll"><img src="https://graph.org/file/1d80c38ce328695547203.jpg"></a></p>
 
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
 
 <p align="center">
-<a href="https://github.com/stkeditz/AAROHIxMUSIC/stargazers"><img src="https://img.shields.io/github/stars/stkeditz/AAROHIxMUSIC?color=darkred&logo=github&logoColor=darkred&style=for-the-badge" alt="Stars" /></a>
-<a href="stkeditz/AAROHIxMUSIC/network/members"> <img src="https://img.shields.io/github/forks/stkeditz/AAROHIxMUSIC?color=darkred&logo=github&logoColor=darkred&style=for-the-badge" /></a>
+<a href="https://t.me/ll_about_ari_ll"><img src="https://img.shields.io/github/stars/stkeditz/AAROHIxMUSIC?color=darkred&logo=github&logoColor=darkred&style=for-the-badge" alt="Stars" /></a>
+<a href="https://t.me/ll_about_ari_ll"> <img src="https://img.shields.io/github/forks/stkeditz/AAROHIxMUSIC?color=darkred&logo=github&logoColor=darkred&style=for-the-badge" /></a>
 <a href="https://github.com/stkeditz/AAROHIxMUSIC/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-darkred?style=for-the-badge" alt="License" /> </a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-darkred?style=for-the-badge&logo=python" alt="Python" /> </a>
 <a href="https://pypi.org/project/Pyrogram/"> <img src="https://img.shields.io/pypi/v/pyrogram?color=darkred&label=pyrogram&logo=python&logoColor=darkred&style=for-the-badge" /></a>
@@ -28,7 +28,7 @@
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
 
 <p align="center">
-  <img src="https://te.legra.ph/file/08e3fa23bfff81e9e04b1.jpg">
+  <img src="https://graph.org/file/8a565e042eab2b1c6885d.jpg">
 </p>
 
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
