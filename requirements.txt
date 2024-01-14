@@ -10,7 +10,8 @@ heroku3
 lyricsgenius
 motor
 numpy
-pillow
+pillow==9.5.0
+pyfiglet
 psutil
 py-tgcalls==0.9.7
 pykeyboard
@@ -22,6 +23,7 @@ speedtest-cli
 spotipy
 tgcrypto
 unidecode
+yt-dlp==2023.12.30
 yt-dlp
 youtube-search
 youtube-search-python
