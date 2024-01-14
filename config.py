@@ -1,3 +1,4 @@
+#https://t.me/ll_about_ari_ll
 import re
 from os import getenv
 
@@ -13,6 +14,8 @@ API_HASH = getenv("API_HASH", "")
 
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 
+BOT_USERNAME = ("ari_music_4u_bot")   
+
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 54000))
@@ -23,7 +26,7 @@ SONG_DOWNLOAD_DURATION = int(
 
 LOGGER_ID = int(getenv("LOGGER_ID", ""))
 
-OWNER_ID = int(getenv("OWNER_ID", "2107529793"))
+OWNER_ID = int(getenv("OWNER_ID", "6352061770"))
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
@@ -31,15 +34,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/stkeditz/AAROHIxMUSICv2",
+    "https://github.com/arimaxx/JAAnXARI",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/LOVE_FEELINGS_WILL1")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/LOVE_FEELINGS_WILL1")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ll_about_ari_ll")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Three_stars_ki_duniya")
 
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
@@ -82,21 +85,21 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/0e425ef0c356dfc82392d.jpg"
+    "START_IMG_URL", "https://telegra.ph/file/b609c4f51469c4778dfab.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://graph.org/file/f16f757fe9c10f81b67ef.jpg"
+    "PING_IMG_URL", "https://graph.org/file/1d80c38ce328695547203.jpg"
 )
-PLAYLIST_IMG_URL = "https://te.legra.ph/file/e68f585a0a2e4e5dc1164.jpg"
-STATS_IMG_URL = "https://te.legra.ph/file/4a7c28726502e24ea0fe0.jpg"
-TELEGRAM_AUDIO_URL = "https://te.legra.ph/file/810f874873e1565cf5732.jpg"
-TELEGRAM_VIDEO_URL = "https://te.legra.ph/file/16d7dd76f4ce8b8b01fdf.jpg"
-STREAM_IMG_URL = "https://te.legra.ph/file/53f1a295e172d39eaa39d.jpg"
-SOUNCLOUD_IMG_URL = "https://te.legra.ph/file/bb0ff85f2dd44070ea519.jpg"
-YOUTUBE_IMG_URL = "https://te.legra.ph/file/53f1a295e172d39eaa39d.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/5d90c3bc7f0d229194a9f.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/5d90c3bc7f0d229194a9f.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/5d90c3bc7f0d229194a9f.jpg"
+PLAYLIST_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+STATS_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+TELEGRAM_AUDIO_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+TELEGRAM_VIDEO_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+STREAM_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+SOUNCLOUD_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+YOUTUBE_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://graph.org/file/1d80c38ce328695547203.jpg"
 
 
 def time_to_seconds(time):
