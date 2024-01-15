@@ -11,5 +11,6 @@ async def delete_links(client, message):
         if custom_url and "https://youtu.be/" not in custom_url:
             # Your modified code goes here
             # Use 'custom_url' to remove the association between the song and the custom URL
+            pass  # Placeholder, replace with your code
         else:
             await message.delete()
