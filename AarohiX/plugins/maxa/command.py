@@ -8,7 +8,7 @@ bot = Client("BOT_TOKEN")
 # Define a common function for sending the jaan photo reply
 async def send_jaan_photo(client, message):
     photo_file_path = "https://telegra.ph/file/94cf72e3ae17f553c4f02.jpg"
-    await message.reply_photo(photo=photo_file_path, caption="🤍 afk ➪ sᴇᴛ ʏᴏᴜʀ ᴏғғʟɪɴᴇ ʀᴇᴀsᴏɴ 🌸\n
+   await message.reply_photo(photo=photo_file_path, caption="""🤍 afk ➪ sᴇᴛ ʏᴏᴜʀ ᴏғғʟɪɴᴇ ʀᴇᴀsᴏɴ 🌸\n
 🤍 brb ➪ sʜᴏᴡ ʏᴏᴜʀ ᴏғғʟɪɴᴇ ʀᴇᴀsᴏɴ ɪɴsᴛᴀɴᴛ ✨🌸\n
 🤍 alive ➪ ʙᴏᴛ ᴡɪʟʟ ᴀʟɪᴠᴇ ᴀɴᴅ sᴇɴᴅ ᴀ ᴀʟɪᴠᴇ ᴍᴀssᴀɢᴇ✨🌸\n
 🤍 Welcome ➪ ɪᴛ's ᴀᴜᴛᴏ ᴅᴏɴ'ᴛ ɴᴇᴇᴅ ᴛᴏ sᴇᴛ ᴇᴠᴇʀʏᴛɪᴍᴇ ✨🌸\n
@@ -21,7 +21,7 @@ async def send_jaan_photo(client, message):
 🤍 info ➪ ʀᴇᴘʟʏ ᴛᴏ ᴛᴇxᴛ ᴀɴᴅ ɢᴇᴛ ᴜsᴇʀ ɪɴғᴏ .🌸✨🌸\n
 🤍 jaan ➪ sᴇᴇ ᴍʏ ʟᴏᴠᴇ 🙈\n
 🤍 speedtest ➪ ʙᴏᴛ ᴡɪʟʟ ɢɪᴠᴇ sᴘᴇᴇᴅ ᴏғ ɴᴇᴛᴡᴏʀᴋ .🌸✨🌸\n
-🤍 ᴡɪsʜᴘᴇʀ ➪[@ʙᴏᴛᴜsᴇʀɴᴀᴍᴇ] + [@ᴛᴀʀɢᴇᴛ ᴜsᴇʀɴᴀᴍᴇ] + [ᴛᴇxᴛ]❤️‍🔥♡゙")
+🤍 ᴡɪsʜᴘᴇʀ ➪[@ʙᴏᴛᴜsᴇʀɴᴀᴍᴇ] + [@ᴛᴀʀɢᴇᴛ ᴜsᴇʀɴᴀᴍᴇ] + [ᴛᴇxᴛ]❤️‍🔥♡゙""")
 
 # Handle both /jaan and /jann commands
 @app.on_message(filters.command(["command", "module", "extra"]))
