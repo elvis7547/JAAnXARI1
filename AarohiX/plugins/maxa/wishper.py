@@ -4,7 +4,7 @@ from pyrogram.types import (
     InlineQueryResultArticle, InputTextMessageContent,
     InlineKeyboardMarkup, InlineKeyboardButton
 )
-BOT_USERNAME = ari_music_4u_bot
+BOT_USERNAME = "ari_music_4u_bot"
 whisper_db = {}
 
 switch_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💫 Start Whisper", switch_inline_query_current_chat="")]])
