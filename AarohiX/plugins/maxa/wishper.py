@@ -16,11 +16,10 @@ async def _whisper(_, inline_query):
     if len(data.split()) < 2:
         mm = [
             InlineQueryResultArticle(
-                title="💫 Whisper",
+                title="💒 Whisper",
                 description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
                 input_message_content=InputTextMessageContent(f"💫 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
-                thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg"
-
+                thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
                 reply_markup=switch_btn
             )
         ]
