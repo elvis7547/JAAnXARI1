@@ -29,13 +29,8 @@ from strings import get_string
 
 
 ADISA_PICS = [
-"https://graph.org/file/e0c7e04cc0acff425fe5d.jpg",
-"https://graph.org/file/0f256eac6f4a8a053193a.jpg",
-"https://graph.org/file/e3babc6e511746be05204.jpg",
-"https://graph.org/file/323acfeef219c919091ec.jpg",
-"https://graph.org/file/1f34f63999a5599051b94.jpg",
-"https://graph.org/file/528b50c44cbfedda9c77e.jpg",
-"https://graph.org/file/365b3ab63ccd789f99bb4.jpg"
+"https://telegra.ph/file/645221f832dcf9661fde9.jpg",
+"https://telegra.ph/file/645221f832dcf9661fde9.jpg",
 ]
 
 
