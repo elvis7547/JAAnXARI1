@@ -4,10 +4,10 @@ from pyrogram.types import (
     InlineQueryResultArticle, InputTextMessageContent,
     InlineKeyboardMarkup, InlineKeyboardButton
 )
-BOT_USERNAME = "ari_music_4u_bot"
+BOT_USERNAME = ari_music_4u_bot
 whisper_db = {}
 
-switch_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💖 Start Whisper", switch_inline_query_current_chat="")]])
+switch_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💫 Start Whisper", switch_inline_query_current_chat="")]])
 
 async def _whisper(_, inline_query):
     data = inline_query.query
@@ -16,10 +16,10 @@ async def _whisper(_, inline_query):
     if len(data.split()) < 2:
         mm = [
             InlineQueryResultArticle(
-                title="💖 Whisper",
+                title="💫 Whisper",
                 description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
-                input_message_content=InputTextMessageContent(f"💖 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
-                thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
+                input_message_content=InputTextMessageContent(f"💫 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
+                thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg
                 reply_markup=switch_btn
             )
         ]
@@ -35,7 +35,7 @@ async def _whisper(_, inline_query):
         except:
             mm = [
                 InlineQueryResultArticle(
-                    title="💖 Whisper",
+                    title="💫 Whisper",
                     description="Invalid username or ID!",
                     input_message_content=InputTextMessageContent("Invalid username or ID!"),
                     thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
@@ -44,20 +44,20 @@ async def _whisper(_, inline_query):
             ]
         
         try:
-            whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💖 Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}")]])
-            one_time_whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💖 One-Time Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}_one")]])
+            whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💫 Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}")]])
+            one_time_whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💫 One-Time Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}_one")]])
             mm = [
                 InlineQueryResultArticle(
-                    title="💖 Whisper",
+                    title="💫 Whisper",
                     description=f"Send a Whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"💖 You are sending a whisper to {user.first_name}.\n\nType your message/sentence."),
+                    input_message_content=InputTextMessageContent(f"💫 You are sending a whisper to {user.first_name}.\n\nType your message/sentence."),
                     thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
                     reply_markup=whisper_btn
                 ),
                 InlineQueryResultArticle(
-                    title="🔩 One-Time Whisper",
+                    title="💫 One-Time Whisper",
                     description=f"Send a one-time whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"💞 You are sending a one-time whisper to {user.first_name}.\n\nType your message/sentence."),
+                    input_message_content=InputTextMessageContent(f"💫 You are sending a one-time whisper to {user.first_name}.\n\nType your message/sentence."),
                     thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
                     reply_markup=one_time_whisper_btn
                 )
@@ -81,13 +81,13 @@ async def whispes_cb(_, query):
     to_user = int(data[2])
     user_id = query.from_user.id
     
-    if user_id not in [from_user, to_user, 6691393517]:
+    if user_id not in [from_user, to_user, 5957398316]:
         try:
             await _.send_message(from_user, f"{query.from_user.mention} is trying to open your whisper.")
         except Unauthorized:
             pass
         
-        return await query.answer("This whisper is not for you 🥺", show_alert=True)
+        return await query.answer("This whisper is not for you 💫", show_alert=True)
     
     search_msg = f"{from_user}_{to_user}"
     
@@ -102,15 +102,15 @@ async def whispes_cb(_, query):
     
     if len(data) > 3 and data[3] == "one":
         if user_id == to_user:
-            await query.edit_message_text("💞 Whisper has been read!\n\nPress the button below to send a whisper!", reply_markup=SWITCH)
+            await query.edit_message_text("💫 Whisper has been read!\n\nPress the button below to send a whisper!", reply_markup=SWITCH)
 
 
 async def in_help():
     answers = [
         InlineQueryResultArticle(
-            title="💖 Whisper",
+            title="💫 Whisper",
             description=f"@ari_music_4u_bot [USERNAME | ID] [TEXT]",
-            input_message_content=InputTextMessageContent(f"**💫Usage:◉\n\n@ari_music_4u_bot (Target Username or ID) (Your Message).\n\n◉Example:◉\n@ari_music_4u_bot @username I Wanna Phuck You"),
+            input_message_content=InputTextMessageContent(f"**📍Usage:**\n\n@ari_music_4u_bot (Target Username or ID) (Your Message).\n\n**Example:**\n@ari_music_4u_bot @username I Wanna Phuck You"),
             thumb_url="https://telegra.ph/file/737288284561c1eeef362.jpg",
             reply_markup=switch_btn
         )
