@@ -27,5 +27,3 @@ yt-dlp==2023.12.30
 yt-dlp
 youtube-search
 youtube-search-python
-flask==2.1.2
-werkzeug==1.0.1
