@@ -8,15 +8,15 @@ from pyrogram import filters
 load_dotenv()
 
 
-API_ID = int(getenv("API_ID", ""))
+API_ID = int(getenv("API_ID", "21971830"))
 
-API_HASH = getenv("API_HASH", "")
+API_HASH = getenv("API_HASH", "46389a1d51d331e5d30d4d6b8a101f3d")
 
-BOT_TOKEN = getenv("BOT_TOKEN", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "6759953581:AAHaVE548dqUIQy2RIlousjZJQI7RP1q5s4")
 
 BOT_USERNAME = ("ari_music_4u_bot")   
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://ariopp:ariopp@cluster0.fpdbynt.mongodb.net/?retryWrites=true&w=majority")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 54000))
 
@@ -24,11 +24,11 @@ SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "54000")
 )
 
-LOGGER_ID = int(getenv("LOGGER_ID", ""))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002043787206"))
 
 OWNER_ID = int(getenv("OWNER_ID", "6352061770"))
 
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
+HEROKU_APP_NAME = getenv("arimusic")
 
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
