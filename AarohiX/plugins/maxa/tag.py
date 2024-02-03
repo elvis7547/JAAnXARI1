@@ -6,10 +6,11 @@ from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
 
+# Global variables
 sudo_users = [6352061770, 6415291931, 6893767944]
-
-# List to keep track of spamming chats
 spam_chats = []
+admin_users = []
+your_group_chat_id = None  # Global variable to store the group chat ID
 
 EMOJI = [
     "💖💖💖💖💖",
@@ -57,7 +58,7 @@ EMOJI = [
     "💓💕💖💗💘",
     "💝💞💟❣️❤️",
     "💗💖💓💞💕",
-    "💎💍💒👑💐",
+    "💎💍💒👑💐"
 ]
 
 
@@ -148,7 +149,7 @@ TAGMES = [ " **𝐇𝐞𝐲 𝐁𝐚𝐛𝐲 𝐊𝐚𝐡𝐚 𝐇𝐨🤗🥱**
            " **𝐓𝐮𝐦𝐡𝐚𝐫𝐞 𝐃𝐨𝐬𝐭 𝐊𝐚𝐡𝐚 𝐆𝐲𝐞🥺** ",
            " **𝐌𝐲 𝐂𝐮𝐭𝐞 𝐎𝐰𝐧𝐞𝐫 [ @lll_notookk_lll ]🥰** ",
            " **𝐊𝐚𝐡𝐚 𝐊𝐡𝐨𝐲𝐞 𝐇𝐨 𝐉𝐚𝐚𝐧😜** ",
-           " **𝐆𝐨𝐨𝐝 𝐍8 𝐉𝐢 𝐁𝐡𝐮𝐭 𝐑𝐚𝐭 𝐇𝐨 𝐠𝐲𝐢🥰** ",
+           " **𝐆𝐨𝐨𝐝 𝐍8 𝐉𝐢 𝐁𝐡𝐮𝐭 𝐑𝐚𝐭 𝐇𝐨 𝐠𝐲𝐢🥰** "
            ]
 
 VC_TAG = [ "**𝐎𝚈𝙴 𝐕𝙲 𝐀𝙰𝙾 𝐍𝙰 𝐏𝙻𝚂🥲**",
@@ -163,32 +164,31 @@ VC_TAG = [ "**𝐎𝚈𝙴 𝐕𝙲 𝐀𝙰𝙾 𝐍𝙰 𝐏𝙻𝚂🥲**",
          "**𝐒𝙾𝚁𝚁𝚈 𝐕𝙰𝙱𝚈 𝐏𝙻𝚂 𝐕𝙲 𝐀𝙰 𝐉𝙰𝙾 𝐍𝙰😥**",
          "**𝐕𝙲 𝐀𝙰𝙽𝙰 𝐄𝙺 𝐂𝙷𝙸𝙹 𝐃𝙸𝙺𝙷𝙰𝚃𝙸 𝐇𝚄🙄**",
          "**𝐕𝙲 𝐌𝙴 𝐂𝙷𝙴𝙲𝙺 𝐊𝚁𝙺𝙴 𝐁𝙰𝚃𝙰𝙾 𝐓𝙾 𝐒𝙾𝙽𝙶 𝐏𝙻𝙰𝚈 𝐇𝙾 𝐑𝙷𝙰 𝐇?🤔**",
-         "**𝐕𝙲 𝐉𝙾𝙸𝙽 𝐊𝚁𝙽𝙴 𝐌𝙴 𝐊𝚈𝙰 𝐉𝙰𝚃𝙰 𝐇 𝐓𝙷𝙾𝚁𝙰 𝐃𝙴𝚁 𝐊𝙰𝚁 𝐋𝙾 𝐍𝙰🙂**",
+         "**𝐕𝙲 𝐉𝙾𝙸𝙽 𝐊𝚁𝙽𝙴 𝐌𝙴 𝐊𝚈𝙰 𝐉𝙰𝚃𝙰 𝐇 𝐓𝙷𝙾𝚁𝙰 𝐃𝙴𝚁 𝐊𝙰𝚁 𝐋𝙾 𝐍𝙰🙂**"
         ]
-# List to store admin users dynamically
-admin_users = []
-
-# Fetch and store admin users from a group
-async def fetch_admin_users(client, chat_id):
-    admins = await client.get_chat_members(chat_id, filter="administrators")
+# Function to fetch admin users and update the chat_id
+async def fetch_admin_users(client):
+    global your_group_chat_id  # Make your_group_chat_id a global variable
+    dialogs = await client.get_dialogs()
+    
+    for dialog in dialogs:
+        if dialog.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
+            your_group_chat_id = dialog.chat.id
+            break
+    
+    admins = await client.get_chat_members(your_group_chat_id, filter="administrators")
     admin_users.extend([admin.user.id for admin in admins])
 
-# Function to check if the user is a sudo user
-def is_sudo_user(user_id):
-    return user_id in sudo_users
-
 # Fetch admin users when the bot starts (you can call this function whenever needed)
-asyncio.get_event_loop().run_until_complete(fetch_admin_users(app, "your_group_chat_id"))
+await fetch_admin_users(app)
 
 @app.on_message(filters.command(["tagall", "all", "tagmember", "utag", "stag", "hftag", "bstag", "eftag", "tag", "etag", "utag", "atag" ], prefixes=["/", "@", "#"]))
 async def mentionall(client, message):
     chat_id = message.chat.id
 
-  
-    if not is_sudo_user(message.from_user.id):
+    if not sudo_users(message.from_user.id):
         return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
 
-  
     usrnum = 0
     usrtxt = ""
     async for usr in client.get_chat_members(chat_id):
@@ -214,7 +214,7 @@ async def mentionall(client, message):
 async def mention_allvc(client, message):
     chat_id = message.chat.id
 
-    if not is_sudo_user(message.from_user.id):
+    if not sudo_users(message.from_user.id):
         return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
 
     usrnum = 0
@@ -255,11 +255,11 @@ async def cancel_spam(client, message):
         ):
             is_admin = True
     
-    if is_admin or is_sudo_user(message.from_user.id):
+    if is_admin or sudo_users(message.from_user.id):
         try:
             spam_chats.remove(message.chat.id)
         except:
             pass
         return await message.reply("💫 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐬𝐭𝐨𝐩𝐩𝐞𝐝 💫")
     else:
-        return await message.reply("🥺𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐬𝐭𝐨𝐩 𝐭𝐡𝐞 𝐭𝐚𝐠𝐠𝐢𝐧𝐠 𝐩𝐫𝐨𝐜𝐞𝐬𝐬.")
+        return await message.reply("🥺𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐬𝐭𝐨𝐩 𝐭𝐡𝐞 𝐭𝐚𝐠𝐠𝐢𝐧𝐠 𝐩𝐫𝐨𝐜𝐞𝐬𝐬.") 
