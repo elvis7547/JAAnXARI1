@@ -167,20 +167,20 @@ VC_TAG = [ "**𝐎𝚈𝙴 𝐕𝙲 𝐀𝙰𝙾 𝐍𝙰 𝐏𝙻𝚂🥲**",
          "**𝐕𝙲 𝐉𝙾𝙸𝙽 𝐊𝚁𝙽𝙴 𝐌𝙴 𝐊𝚈𝙰 𝐉𝙰𝚃𝙰 𝐇 𝐓𝙷𝙾𝚁𝙰 𝐃𝙴𝚁 𝐊𝙰𝚁 𝐋𝙾 𝐍𝙰🙂**",
         ]
 # Function to fetch admin users and update the chat_id
-async def fetch_admin_users(client):
+async def fetch_admin_users():
     global your_group_chat_id  # Make your_group_chat_id a global variable
-    dialogs = await client.get_dialogs()
+    dialogs = await app.get_dialogs()
     
     for dialog in dialogs:
         if dialog.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
             your_group_chat_id = dialog.chat.id
             break
     
-    admins = await client.get_chat_members(your_group_chat_id, filter="administrators")
+    admins = await app.get_chat_members(your_group_chat_id, filter="administrators")
     admin_users.extend([admin.user.id for admin in admins])
 
 # Fetch admin users when the bot starts (you can call this function whenever needed)
-asyncio.run(fetch_admin_users(app))
+await fetch_admin_users()
 
 @app.on_message(filters.command(["tagall", "all", "tagmember", "utag", "stag", "hftag", "bstag", "eftag", "tag", "etag", "utag", "atag" ], prefixes=["/", "@", "#"]))
 async def mentionall(client, message):
