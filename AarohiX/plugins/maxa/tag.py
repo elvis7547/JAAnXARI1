@@ -166,6 +166,7 @@ VC_TAG = [ "**𝐎𝚈𝙴 𝐕𝙲 𝐀𝙰𝙾 𝐍𝙰 𝐏𝙻𝚂🥲**",
          "**𝐕𝙲 𝐌𝙴 𝐂𝙷𝙴𝙲𝙺 𝐊𝚁𝙺𝙴 𝐁𝙰𝚃𝙰𝙾 𝐓𝙾 𝐒𝙾𝙽𝙶 𝐏𝙻𝙰𝚈 𝐇𝙾 𝐑𝙷𝙰 𝐇?🤔**",
          "**𝐕𝙲 𝐉𝙾𝙸𝙽 𝐊𝚁𝙽𝙴 𝐌𝙴 𝐊𝚈𝙰 𝐉𝙰𝚃𝙰 𝐇 𝐓𝙷𝙾𝚁𝙰 𝐃𝙴𝚁 𝐊𝙰𝚁 𝐋𝙾 𝐍𝙰🙂**",
         ]
+
 # Function to fetch admin users and update the chat_id
 async def fetch_admin_users():
     global your_group_chat_id  # Make your_group_chat_id a global variable
@@ -180,7 +181,7 @@ async def fetch_admin_users():
     admin_users.extend([admin.user.id for admin in admins])
 
 # Fetch admin users when the bot starts (you can call this function whenever needed)
-await fetch_admin_users()
+asyncio.run(fetch_admin_users())
 
 @app.on_message(filters.command(["tagall", "all", "tagmember", "utag", "stag", "hftag", "bstag", "eftag", "tag", "etag", "utag", "atag" ], prefixes=["/", "@", "#"]))
 async def mentionall(client, message):
@@ -241,25 +242,4 @@ async def mention_allvc(client, message):
 @app.on_message(filters.command(["cancel", "stop"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
-        return await message.reply("I'm not Tagging Baby.")
-    
-    is_admin = False
-    try:
-        participant = await client.get_chat_member(message.chat.id, message.from_user.id)
-    except UserNotParticipant:
-        is_admin = False
-    else:
-        if participant.status in (
-            ChatMemberStatus.ADMINISTRATOR,
-            ChatMemberStatus.OWNER
-        ):
-            is_admin = True
-    
-    if is_admin or sudo_users(message.from_user.id):
-        try:
-            spam_chats.remove(message.chat.id)
-        except:
-            pass
-        return await message.reply("💫 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐬𝐭𝐨𝐩𝐩𝐞𝐝 💫")
-    else:
-        return await message.reply("🥺𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐬𝐭𝐨𝐩 𝐭𝐡𝐞 𝐭𝐚𝐠𝐠𝐢𝐧𝐠 𝐩𝐫𝐨𝐜𝐞𝐬𝐬.") 
+        return await message.reply("I'm not Tag")
