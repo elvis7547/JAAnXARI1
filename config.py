@@ -4,9 +4,9 @@ from os import getenv
 
 from dotenv import load_dotenv
 from pyrogram import filters
-from keep_alive import keep_alive
+#from keep_alive import keep_alive
 
-keep_alive()
+#keep_alive()
 
 load_dotenv()
 
