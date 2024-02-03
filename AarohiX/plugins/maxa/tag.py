@@ -6,11 +6,8 @@ from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import ChatPermissions
 
-# Global variables
-sudo_users = [6352061770, 6415291931, 6893767944]
 spam_chats = []
-admin_users = []
-your_group_chat_id = None  # Global variable to store the group chat ID
+sudo_users = [6352061770, 6415291931, 6893767944]
 
 EMOJI = [
     "💖💖💖💖💖",
@@ -166,30 +163,35 @@ VC_TAG = [ "**𝐎𝚈𝙴 𝐕𝙲 𝐀𝙰𝙾 𝐍𝙰 𝐏𝙻𝚂🥲**",
          "**𝐕𝙲 𝐌𝙴 𝐂𝙷𝙴𝙲𝙺 𝐊𝚁𝙺𝙴 𝐁𝙰𝚃𝙰𝙾 𝐓𝙾 𝐒𝙾𝙽𝙶 𝐏𝙻𝙰𝚈 𝐇𝙾 𝐑𝙷𝙰 𝐇?🤔**",
          "**𝐕𝙲 𝐉𝙾𝙸𝙽 𝐊𝚁𝙽𝙴 𝐌𝙴 𝐊𝚈𝙰 𝐉𝙰𝚃𝙰 𝐇 𝐓𝙷𝙾𝚁𝙰 𝐃𝙴𝚁 𝐊𝙰𝚁 𝐋𝙾 𝐍𝙰🙂**",
         ]
-
-# Function to fetch admin users and update the chat_id
-async def fetch_admin_users():
-    global your_group_chat_id  # Make your_group_chat_id a global variable
-    dialogs = await app.get_dialogs()
-    
-    for dialog in dialogs:
-        if dialog.chat.type in (ChatType.SUPERGROUP, ChatType.GROUP):
-            your_group_chat_id = dialog.chat.id
-            break
-    
-    admins = await app.get_chat_members(your_group_chat_id, filter="administrators")
-    admin_users.extend([admin.user.id for admin in admins])
-
-# Fetch admin users when the bot starts (you can call this function whenever needed)
-asyncio.run(fetch_admin_users())
-
-@app.on_message(filters.command(["tagall", "all", "tagmember", "utag", "stag", "hftag", "bstag", "eftag", "tag", "etag", "utag", "atag" ], prefixes=["/", "@", "#"]))
+@app.on_message(filters.command(["tagall", "all", "tagmember", "utag", "stag", "hftag", "bstag", "eftag", "tag", "etag", "utag", "atag"], prefixes=["/", "@", "#"]))
 async def mentionall(client, message):
     chat_id = message.chat.id
 
-    if not sudo_users(message.from_user.id):
-        return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
+    if message.chat.type == ChatType.PRIVATE:
+        return await message.reply("𝐓𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐢𝐬 𝐨𝐧𝐥𝐲 𝐟𝐨𝐫 𝐠𝐫𝐨𝐮𝐩𝐬 (●'◡'●)")
 
+    user_id = message.from_user.id
+    is_sudo_user = user_id in sudo_users
+
+    if not is_sudo_user:
+        return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 || [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) || 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
+
+    if message.reply_to_message and message.text:
+        return await message.reply("❤️‍🔥 /𝐭𝐚𝐠𝐚𝐥𝐥 𝐌𝐞𝐧𝐭𝐢𝐨𝐧𝐢𝐧𝐠 𝐓𝐫𝐲 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 / 𝐨𝐫 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐅𝐨𝐫 𝐓𝐚𝐠𝐠𝐢𝐧𝐠...❤️‍🔥")
+    elif message.text:
+        mode = "text_on_cmd"
+        msg = message.text
+    elif message.reply_to_message:
+        mode = "text_on_reply"
+        msg = message.reply_to_message
+        if not msg:
+            return await message.reply("❤️‍🔥 /𝐭𝐚𝐠𝐚𝐥𝐥 𝐌𝐞𝐧𝐭𝐢𝐨𝐧𝐢𝐧𝐠 𝐓𝐫𝐲 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 / 𝐨𝐫 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐅𝐨𝐫 𝐓𝐚𝐠𝐠𝐢𝐧𝐠...❤️‍🔥")
+    else:
+        return await message.reply("❤️‍🔥 /𝐭𝐚𝐠𝐚𝐥𝐥 𝐌𝐞𝐧𝐭𝐢𝐨𝐧𝐢𝐧𝐠 𝐓𝐫𝐲 𝐋𝐢𝐤𝐞 𝐓𝐡𝐢𝐬 / 𝐨𝐫 𝐑𝐞𝐩𝐥𝐲 𝐀𝐧𝐲 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐍𝐞𝐱𝐭 𝐓𝐢𝐦𝐞 𝐅𝐨𝐫 𝐓𝐚𝐠𝐠𝐢𝐧𝐠...❤️‍🔥")
+
+    if chat_id in spam_chats:
+        return await message.reply("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐅𝐢𝐫𝐬𝐭 𝐒𝐭𝐨𝐩 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐏𝐫𝐨𝐜𝐞𝐬𝐬...🥺")
+    spam_chats.append(chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in client.get_chat_members(chat_id):
@@ -201,8 +203,11 @@ async def mentionall(client, message):
         usrtxt += f"[{usr.user.first_name}](tg://user?id={usr.user.id}) "
 
         if usrnum == 1:
-            txt = f"{usrtxt} {random.choice(TAGMES)}"
-            await client.send_message(chat_id, txt)
+            if mode == "text_on_cmd":
+                txt = f"{usrtxt} {random.choice(TAGMES)}"
+                await client.send_message(chat_id, txt)
+            elif mode == "text_on_reply":
+                await msg.reply(f"[{random.choice(EMOJI)}](tg://user?id={usr.user.id})")
             await asyncio.sleep(4)
             usrnum = 0
             usrtxt = ""
@@ -211,13 +216,23 @@ async def mentionall(client, message):
     except:
         pass
 
+
 @app.on_message(filters.command(["vctag"], prefixes=["/", "@", "#"]))
 async def mention_allvc(client, message):
     chat_id = message.chat.id
 
-    if not sudo_users(message.from_user.id):
-        return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
+    if message.chat.type == ChatType.PRIVATE:
+        return await message.reply("𝐓𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐢𝐬 𝐨𝐧𝐥𝐲 𝐟𝐨𝐫 𝐠𝐫𝐨𝐮𝐩𝐬.💞")
 
+    user_id = message.from_user.id
+    is_sudo_user = user_id in sudo_users
+
+    if not is_sudo_user:
+        return await message.reply("💫𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 || [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) || 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝.💫")
+
+    if chat_id in spam_chats:
+        return await message.reply("𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐅𝐢𝐫𝐬𝐭 𝐒𝐭𝐨𝐩 𝐑𝐮𝐧𝐧𝐢𝐧𝐠 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐏𝐫𝐨𝐜𝐞𝐬𝐬...🥺")
+    spam_chats.append(chat_id)
     usrnum = 0
     usrtxt = ""
     async for usr in client.get_chat_members(chat_id):
@@ -239,7 +254,18 @@ async def mention_allvc(client, message):
     except:
         pass
 
+
 @app.on_message(filters.command(["cancel", "stop"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
-        return await message.reply("I'm not Tag")
+        return await message.reply("𝐂𝐮𝐫𝐫𝐞𝐧𝐭𝐥𝐲 𝐈'𝐦 𝐍𝐨𝐭 𝐓𝐚𝐠𝐠𝐢𝐧𝐠 𝐁𝐚𝐛𝐲.🥰")
+    user_id = message.from_user.id
+    is_sudo_user = user_id in sudo_users
+    if not is_sudo_user:
+        return await message.reply("🥺𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐚𝐮𝐭𝐡𝐨𝐫𝐢𝐳𝐞𝐝 𝐛𝐲 || [𝐀𝐑𝐈](https://t.me/lll_notookk_lll) || 𝐭𝐨 𝐬𝐭𝐨𝐩 𝐭𝐡𝐞 𝐭𝐚𝐠𝐠𝐢𝐧𝐠 𝐩𝐫𝐨𝐜𝐞𝐬𝐬.")
+    else:
+        try:
+            spam_chats.remove(message.chat.id)
+        except:
+            pass
+        return await message.reply("💫 𝐌𝐞𝐧𝐭𝐢𝐨𝐧 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐬𝐭𝐨𝐩𝐩𝐞𝐝💫")
