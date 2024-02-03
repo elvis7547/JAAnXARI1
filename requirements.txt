@@ -28,4 +28,5 @@ yt-dlp
 youtube-search
 youtube-search-python
 pytz
-flask
+Flask==2.0.2
+
