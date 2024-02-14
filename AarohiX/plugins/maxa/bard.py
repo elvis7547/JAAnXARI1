@@ -23,7 +23,7 @@ key = InlineKeyboardMarkup(
                 ]
             ]
 )
-            
+bard = Bard()      
 @app.on_message(filters.command("ask", prefixes="/"))
 def ask_command(client, message):
     query = " ".join(message.command[1:])
