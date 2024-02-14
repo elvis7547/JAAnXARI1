@@ -36,4 +36,4 @@ yt-dlp
 youtube-search
 youtube-search-python
 wget
-bardapi
+bardapi==0.1.0
