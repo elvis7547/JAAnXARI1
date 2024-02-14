@@ -44,6 +44,3 @@ def start(bot, message):
         WELCOME_MSG,
         reply_markup=key,
     )
-    
-if name == "main":
-    app.run()
