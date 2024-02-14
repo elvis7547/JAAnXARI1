@@ -11,7 +11,7 @@ WELCOME_MSG = (
     "ᴛᴏ ᴜꜱᴇ ɪᴛ ᴛʏᴘᴇ /ᴀꜱᴋ ᴀɴᴅ ᴡʀɪᴛᴇ ʏᴏᴜʀ ᴘʀᴏᴍᴘᴛ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ꜱᴛᴀʀᴛ ᴀɪ ᴄʜᴀᴛ.\n\n"
     "ᴇxᴀᴍᴘʟᴇ ᴜꜱᴀɢᴇ:\n\n"
     "/ask [Your Command]\n\n"
-    ᴍᴀᴅᴇ ᴡɪᴛʜ 🖤 ʙʏ <a href=\"https://t.me/lll_notookk_lll\">||ᴀʀɪ||❣️</a>"
+   "ᴍᴀᴅᴇ ᴡɪᴛʜ \U0001F5A4 ʙʏ <a href=\"https://t.me/lll_notookk_lll\">||ᴀʀɪ||❣️</a>"
 )
 
 DEMO_PHOTO = "https://telegra.ph/file/f9b2332612fad16e49b66.jpg" #--- Logo File name.
