@@ -69,3 +69,18 @@ async def search(event):
             prev_and_next_btns = [Button.inline("▶️Next▶️", data=f"next {start+10} {event.text.split()[1]}")]
             await msg.edit(result, link_preview=False, buttons=prev_and_next_btns)
             await session.close()
+
+@app.on_message()
+async def handle_message(client, message):
+    # Handle other types of messages if necessary
+    pass
+
+@app.on_raw_update()
+async def handle_raw_updates(client, update):
+    if isinstance(update, types.UpdateGroupCall):
+        if isinstance(update.call, types.GroupCallDiscarded):
+            chat_id = update.chat_id
+            user_id = update.call.user_id
+            first_name = update.call.title
+            mention = f"[{first_name}](tg://user?id={user_id})"
+            await client.send_message(chat_id, f"{mention} ended the voice chat.")
