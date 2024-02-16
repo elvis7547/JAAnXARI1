@@ -15,7 +15,7 @@ API_ID = int(getenv("API_ID", "21971830"))
 
 API_HASH = getenv("API_HASH", "46389a1d51d331e5d30d4d6b8a101f3d")
 
-BOT_TOKEN = getenv("BOT_TOKEN", "6759953581:AAHaVE548dqUIQy2RIlousjZJQI7RP1q5s4")
+BOT_TOKEN = getenv("BOT_TOKEN", "none")
 
 BOT_USERNAME = ("ari_music_4u_bot")   
 
