@@ -10,7 +10,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import YOUTUBE_IMG_URL
-from AnonXMusic import app
+from AarohiX import app
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -65,7 +65,7 @@ async def get_thumb(videoid):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"AnonXMusic/assets/FUCK.png")
+        bg = Image.open(f"AarohiX/assets/FUCK.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(30))
@@ -99,11 +99,11 @@ async def get_thumb(videoid):
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 45)
-        ImageFont.truetype("AnonXMusic/assets/font2.ttf", 70)
-        arial = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 30)
-        ImageFont.truetype("AnonXMusic/assets/font.ttf", 30)
-        name_font = ImageFont.truetype("AnonXMusic/assets/font.ttf", 30)
+        font = ImageFont.truetype("AarohiX/assets/font2.ttf", 45)
+        ImageFont.truetype("AarohiX/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("AarohiX/assets/font2.ttf", 30)
+        ImageFont.truetype("AarohiX/assets/font.ttf", 30)
+        name_font = ImageFont.truetype("AarohiX/assets/font.ttf", 30)
         para = textwrap.wrap(title, width=30)
         j = 0
         draw.text((5, 5), f"TeamAliec", fill="white", font=name_font)
