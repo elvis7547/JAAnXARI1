@@ -110,7 +110,7 @@ Press `Ctrl+C` when you're done with editing env and `:wq` to save the env<br>
 </p>
 
 <p align="center">
-<a href="https://t.me/three_stars_ki_duniya"(https://te.legra.ph/file/5d90c3bc7f0d229194a9f.jpg)"><img src="https://img.shields.io/badge/-Support%20Channel-darkred.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/ll_about_ari_ll"(https://te.legra.ph/file/5d90c3bc7f0d229194a9f.jpg)"><img src="https://img.shields.io/badge/-Support%20Channel-darkred.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
