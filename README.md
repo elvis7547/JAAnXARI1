@@ -25,6 +25,8 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=Aarohi+play+music+on+telegram+voice+chat+feature;Managed+by+DiL%E2%9D%A4%EF%B8%8F"> 
 
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"></a>
+
 
 <p align="center">
   <img src="https://graph.org/file/8a565e042eab2b1c6885d.jpg">
