@@ -37,3 +37,4 @@ youtube-search
 youtube-search-python
 wget
 bardapi==0.1.0
+telegraph
