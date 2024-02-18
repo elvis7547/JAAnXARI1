@@ -71,7 +71,7 @@ async def ctest(_, message):
 
          img = Image.open("AarohiX/assets/ari.jpg")
 
-         img1 = img1.resize((450,450))
+         img1 = img1.resize((470,470))
          img2 = img2.resize((437,437))
 
          mask = Image.new('L', img1.size, 0)
