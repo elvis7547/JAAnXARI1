@@ -104,7 +104,7 @@ async def start_nightmode() :
             print(f"[bold red] Unable To close Group {add_chat} - {e}")
 
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")
-scheduler.add_job(start_nightmode, trigger="cron", hour=21, minute=40)
+scheduler.add_job(start_nightmode, trigger="cron", hour=21, minute=55)
 scheduler.start()
 
 async def close_nightmode():
