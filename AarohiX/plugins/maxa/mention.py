@@ -13,7 +13,7 @@ app = Client(ARI_STRING, api_id=API_ID, api_hash=API_HASH)
 SPAM_CHATS = []
 
 # Define your command handler for tagging
-@app.on_message(filters.command(["mention", "all"]) | filters.command("@all", "") & filters.group)
+@app.on_message(filters.command(["maro", "ari"]) | filters.command("@ari", "") & filters.group)
 async def tag_all_users(client, message):
     replied = message.reply_to_message  
     if len(message.command) < 2 and not replied:
