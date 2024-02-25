@@ -178,5 +178,57 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
+        return button
+
+def queue_markup(_, videoid, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="☆", callback_data=f"add_playlist {videoid}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data=f"close"
+            )
+        ],
+    ]
+    return buttons
+    
+def telegram_markup(_, chat_id):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="▷",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="II", callback_data=f"ADMIN Pause|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"
+            ),
+            InlineKeyboardButton(
+                text="▢", callback_data=f"ADMIN Stop|{chat_id}"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="✯ ᴄʟᴏsᴇ ✯", callback_data=f"close"
+            )
+        ],
     ]
     return buttons
