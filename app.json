@@ -24,7 +24,7 @@
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "6388069848:AAGewqCWR9gbhzT4PItw42BRh79tYenIsR4",
+        "value": ":",
         "required": true
       },
       "MONGO_DB_URI": {
@@ -39,7 +39,7 @@
       },
       "STRING_SESSION": {
         "description": "A Pyrogram v2 String Session from @Shsusu_bot on Telegram.",
-        "value": "BQG_NJ0AuoT17pVJSsQRES19b10A57v3Ewx5eRYL_zIMz1romTkzBXhnmR4Dpbhr-_5VeN64PEReEfpUKtnCu71_r3FTI1Sxf9SPrmLfHNee3Bbf6PQcqlxnSfCROUan6TRy1RrLX02fjibUmvXT_87IZ5rfxX6JjMyAMjnZc-8tMDGRri_W2oGAWGfLlKMbm09JcgIwunhUCAjIG3c1BcHdWyNITruF6Y80hHtskomqCbLUMSTSuXnIpPmkDthMRS7WR5S6IAH0q4A-C3YboDibc2LgRXwxQ1keP2QE0P_Kilyw1Klo9Hi2HEsKTHA0KxmctT80xifN9SzAAIOVC-5Y2C2qSQAAAAGJXS2QAA",
+        "value": "----",
         "required": true
       },
       "HEROKU_API_KEY": {
